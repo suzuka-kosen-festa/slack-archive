@@ -14,7 +14,7 @@ jobs:
     outputs:
       only_changed: ${{ steps.check.outputs.only_changed }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Check if only slack-archive.yaml changed
@@ -31,7 +31,7 @@ jobs:
     if: needs.check_files_changed.outputs.only_changed == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: mikefarah/yq@v4.44.3
         id: yq_list
         with:
@@ -52,7 +52,7 @@ jobs:
     if: needs.check_files_changed.outputs.only_changed == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: yamllint
         uses: reviewdog/action-yamllint@v1.19.0
         with:
