@@ -1,4 +1,4 @@
-FROM alpine:3.20.3
+FROM alpine:3.23.3
 
 RUN apk --no-cache add \
   fuse \
